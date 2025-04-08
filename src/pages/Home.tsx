@@ -11,7 +11,7 @@ export default function Home() {
       <Main>
         <h1>main page</h1>
         {isLoggedIn && "안녕하세요 id" + userId + "님!"}
-        <p></p>
+        <p>CICD 테스트!</p>
       </Main>
     </>
   );
