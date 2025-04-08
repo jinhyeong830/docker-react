@@ -43,5 +43,5 @@ jobs:
           key: ${{ secrets.EC2_KEY }}
           script: |
             sudo rm -rf /usr/share/nginx/html/*
-            sudo mv /home/ubuntu/temp_build/* /usr/share/nginx/html/
+            sudo mv /home/ubuntu/temp_build/build/* /usr/share/nginx/html/
             sudo rm -rf /home/ubuntu/temp_build
