@@ -1,0 +1,12 @@
+{
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+
+  "peacock.color": "#dd0531",
+  "peacock.affectActivityBar": false,
+  "peacock.affectStatusBar": false,
+
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  }
+}

@@ -8,7 +8,7 @@ import Button from "../atoms/Button";
 import Heading2 from "../atoms/Heading2";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { useRecoilState, useSetRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 import { authState } from "../../recoil/authState";
 import { AuthInterface } from "../../interface/interface";
 import Cookies from "js-cookie";
@@ -24,7 +24,6 @@ interface SubmitInterface {
 export default function Form({ type }: Props) {
   const {
     register,
-    watch,
     formState: { errors },
     handleSubmit,
     reset,

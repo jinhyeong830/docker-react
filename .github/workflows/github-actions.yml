@@ -19,7 +19,7 @@ jobs:
 
       - name: Install dependencies and build
         run: |
-          npm ci
+          CI=false npm ci
           npm run build
 
       - name: Upload build folder to EC2
