@@ -30,7 +30,7 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ubuntu
           key: ${{ secrets.EC2_KEY }}
-          source: "build/*"
+          source: "build"
           target: "/home/ubuntu/temp_build"
           # target: "/usr/share/nginx/html" # 권한 없음
 
