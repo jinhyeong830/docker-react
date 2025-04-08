@@ -1,11 +1,10 @@
-import { useEffect, useState } from 'react';
-import Main from '../components/molecules/Main';
-import { useRecoilValue } from 'recoil';
-import { authState } from '../recoil/authState';
-import UnAuthorized from './401';
-import axios from 'axios';
-import { needTokenAxios } from '../utils/apiUtils';
-import { RESTApiMethod } from '../constants/enum';
+import { useEffect, useState } from "react";
+import Main from "../components/molecules/Main";
+import { useRecoilValue } from "recoil";
+import { authState } from "../recoil/authState";
+import UnAuthorized from "./401";
+import { needTokenAxios } from "../utils/apiUtils";
+import { RESTApiMethod } from "../constants/enum";
 
 // 시간이 많았다면 해당 검증이 필요한 해당 페이지를 컴포넌트화했을 듯
 export default function OnlyUserPage() {
@@ -16,16 +15,16 @@ export default function OnlyUserPage() {
   }, []);
 
   //   ---- 로그인 되었다면, 요청 보내기
-  const [serverRes, setServerRes] = useState('');
+  const [serverRes, setServerRes] = useState("");
   useEffect(() => {
     if (isLogin)
-      needTokenAxios(RESTApiMethod.GET, '/test')
+      needTokenAxios(RESTApiMethod.GET, "/test")
         .then((res) => {
-          console.log('res', res);
+          console.log("res", res);
           setServerRes(res.data);
         })
         .catch((err) => {
-          console.log('errrrr', err);
+          console.log("errrrr", err);
         });
   }, [isLogin]);
   if (!isLogin) return <UnAuthorized />;

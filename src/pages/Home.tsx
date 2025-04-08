@@ -1,6 +1,6 @@
-import { useRecoilState, useRecoilValue } from 'recoil';
-import Main from '../components/molecules/Main';
-import { authState } from '../recoil/authState';
+import { useRecoilValue } from "recoil";
+import Main from "../components/molecules/Main";
+import { authState } from "../recoil/authState";
 
 export default function Home() {
   const { isLoggedIn, userId } = useRecoilValue(authState);
@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <Main>
         <h1>main page</h1>
-        {isLoggedIn && '안녕하세요 id' + userId + '님!'}
+        {isLoggedIn && "안녕하세요 id" + userId + "님!"}
         <p></p>
       </Main>
     </>
