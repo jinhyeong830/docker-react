@@ -31,4 +31,17 @@ jobs:
           username: ubuntu
           key: ${{ secrets.EC2_KEY }}
           source: "build/*"
-          target: "/usr/share/nginx/html"
+          target: "/home/ubuntu/temp_build"
+          # target: "/usr/share/nginx/html" # 권한 없음
+
+          # 권한 모두 허락하는 대신 sudo 명령어 actions에서 처리
+      - name: Move build to nginx with sudo
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ubuntu
+          key: ${{ secrets.EC2_KEY }}
+          script: |
+            sudo rm -rf /usr/share/nginx/html/*
+            sudo mv /home/ubuntu/temp_build/* /usr/share/nginx/html/
+            sudo rm -rf /home/ubuntu/temp_build
