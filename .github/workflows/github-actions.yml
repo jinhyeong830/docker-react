@@ -19,6 +19,10 @@ jobs:
         with:
           node-version: 18
 
+      - name: Create .env.production
+        run: |
+          echo "REACT_APP_API_SERVER=${{ secrets.REACT_APP_API_SERVER }}" > .env.production
+
       - name: Install dependencies and build
         run: |
           npm ci
